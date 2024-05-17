@@ -1,33 +1,22 @@
 import random
-
-# List of words for the game
 word_list = ['wares', 'soup']
 
-# Function to choose a random word from the list
 def get_word():
     return random.choice(word_list).upper()
 
-# Function to play the Hangman game
 def play(word):
-    # Create a string of underscores representing the word to be guessed
     word_completion = "_" * len(word)
-    # Initialize variables
     guessed = False
     guessed_letters = []
     guessed_words = []
     tries = 6
-
     print("Let's play Hangman!\n")
     
     while not guessed and tries > 0:
-        # Display the current state of the hangman and the word being guessed
         print(display_hangman(tries))
         print("Word:", word_completion)
-        print("Guessed Letters:", ", ".join(guessed_letters))
-        # Get user input for a guess
         guess = input("Please guess a letter or word: ").upper()
         
-        # Handling guesses
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("You already guessed the letter", guess)
