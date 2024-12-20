@@ -1,155 +1,78 @@
 /* General Reset */
-* {
+body, h1, h2, p, input, button {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-/* Body Styling */
-body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-/* Header */
-header {
-    background: #4CAF50;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-header h1 {
-    font-size: 2.5rem;
-}
-
-header p {
-    font-size: 1.2rem;
-}
-
-/* Navigation */
-nav {
-    background: #333;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #4CAF50;
-}
-
-/* Main Blog Section */
-main {
-    max-width: 800px;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.blog-post {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 15px;
-}
-
-.blog-post h2 {
-    font-size: 1.8rem;
-    color: #333;
-}
-
-.blog-post .date {
-    font-size: 0.9rem;
-    color: #999;
-    margin-bottom: 10px;
-}
-
-.blog-post p {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-}
-
-.blog-post a {
-    text-decoration: none;
-    color: #4CAF50;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.blog-post a:hover {
-    color: #333;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background: #333;
-    color: white;
-    margin-top: 20px;
-    font-size: 0.9rem;
-}
-
-#about {
-    background-color: #f4f4f4;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-#about h2 {
-    font-size: 2.5em;
-    color: #333;
-}
-
-#about .container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.about-content {
+  }
+  
+  body {
+    background: linear-gradient(to bottom, #87cefa, #1e90ff);
+    color: #fff;
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-top: 30px;
-}
-
-.profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-right: 30px;
-}
-
-.about-content .text {
-    max-width: 600px;
-    text-align: left;
-}
-
-.about-content .text h3 {
-    font-size: 1.8em;
-    color: #333;
-}
-
-.about-content .text p {
-    font-size: 1.1em;
-    color: #666;
-    line-height: 1.6;
-}
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .weather-app {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+  }
+  
+  .app-header {
+    margin-bottom: 20px;
+  }
+  
+  .app-header h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .app-header input {
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+  }
+  
+  .app-header button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #1e90ff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .app-header button:hover {
+    background: #4682b4;
+  }
+  
+  .weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .weather-icon img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .weather-details h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .weather-details p {
+    margin: 5px 0;
+  }
+  

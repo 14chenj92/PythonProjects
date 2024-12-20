@@ -3,43 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Blog</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-    <!-- Header -->
-    <header>
-        <h1>My Blog</h1>
-        <p>Sharing thoughts and ideas</p>
+  <div class="weather-app">
+    <header class="app-header">
+      <h1>Weather App</h1>
+      <input type="text" placeholder="Enter city name" id="city-input">
+      <button id="search-btn">Search</button>
     </header>
-
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="about">About</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Main Blog Content -->
-    <main>
-        {% for post in posts %}
-        <section class="blog-post">
-            <h2>{{ post.title }}</h2>
-            <p class="date">Published on {{ post.date }}</p>
-            <p>{{ post.content }}</p>
-            <a href="{{ post.link }}">Read More...</a>
-        </section>
-        {% endfor %}
+    <main class="weather-info">
+      <div class="weather-icon">
+        <img src="placeholder.png" alt="Weather Icon" id="weather-icon">
+      </div>
+      <div class="weather-details">
+        <h2 id="city-name">City Name</h2>
+        <p id="temperature">Temperature: --°C</p>
+        <p id="description">Description: --</p>
+        <p id="humidity">Humidity: --%</p>
+        <p id="wind-speed">Wind Speed: -- km/h</p>
+      </div>
     </main>
-    
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 My Blog. All rights reserved.</p>
-    </footer>
+  </div>
 </body>
 </html>
 
