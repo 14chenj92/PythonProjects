@@ -7,7 +7,7 @@ body, h1, h2, p, input, button {
   }
   
   body {
-    background: linear-gradient(to bottom, #87cefa, #1e90ff);
+    background: linear-gradient(to bottom, #87cefa, #616f7e);
     color: #fff;
     display: flex;
     justify-content: center;
