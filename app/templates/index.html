@@ -6,18 +6,18 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-<!DOCTYPE html>
-<html lang="en">
 <body>
   <div class="weather-app">
     <header class="app-header">
-      <h1>Weather App</h1> 
-      <input type="text" placeholder="Enter city name" id="city-input">
-      <button id="search-btn">Search</button>
+      <h1>Weather App</h1>
+      <form id="weather-form">
+        <input type="text" placeholder="Enter city name" id="city-input" required>
+        <button type="submit" id="search-btn">Search</button>
+      </form>
     </header>
-    <main class="weather-info">
+    <main class="weather-info" id="weather-result">
       <div class="weather-icon">
-        <img src="placeholder.png" alt="Weather Icon" id="weather-icon">
+<img src = "../static/cloud.png" alt = "Weather">
       </div>
       <div class="weather-details">
         <h2 id="city-name">City Name</h2>
@@ -27,7 +27,35 @@
         <p id="wind-speed">Wind Speed: -- km/h</p>
       </div>
     </main>
+
   </div>
+
+  <script>
+    document.getElementById('weather-form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        const city = document.getElementById('city-input').value;
+
+        fetch(`/weather?city=${encodeURIComponent(city)}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    document.getElementById('weather-result').innerHTML = `<p>${data.error}</p>`;
+                } else {
+                    document.getElementById('city-name').textContent = `Weather in ${data.city}`;
+                    document.getElementById('temperature').textContent = `Temperature: ${data.temperature}°C`;
+                    document.getElementById('description').textContent = `Description: ${data.description}`;
+                    document.getElementById('humidity').textContent = `Humidity: ${data.humidity}%`;
+                    document.getElementById('wind-speed').textContent = `Wind Speed: ${data.wind_speed} m/s`;
+                    document.getElementById('weather-icon').src = `http://openweathermap.org/img/wn/${data.icon}@2x.png`;
+                    document.getElementById('weather-icon').alt = data.description;
+                }
+            })
+            .catch(error => {
+                document.getElementById('weather-result').innerHTML = `<p>Failed to fetch weather data. Please try again.</p>`;
+                console.error(error);
+            });
+    });
+  </script>
 </body>
 </html>
-
