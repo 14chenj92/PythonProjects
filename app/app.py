@@ -9,15 +9,11 @@ API_KEY = "1132c42b947133a83aeb7b5c2d94c376"
 def index():
     return render_template('index.html')
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
 @app.route('/weather', methods=['GET'])
 def weather():
     city = request.args.get('city')  
     if city:
-        url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
+        url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid=1132c42b947133a83aeb7b5c2d94c376&units=metric"
         response = requests.get(url)
         
         if response.status_code == 200:
